@@ -9,150 +9,198 @@ z2
 !i10f 100
 cModel Technology
 dC:/intelFPGA/20.1/ModelSimTutorial
-vmux2
+vfas
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z1 !s110 1709132562
+!s110 1709153257
 !i10b 1
-!s100 :FSdDdXD[D[jgl2m6:DU>2
-Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IE=R`ognPi5o?6W8W>bhnQ3
-Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s100 bo4oUk]>C1S?@G]g7P]1o2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I7nNG7K;7AGO?AnDfD6_A22
+Z2 VDg1SIo80bB@j0V0VzS_@n1
 S1
-Z4 dC:/Users/IMOE001/Desktop/Simulator1
-w1709115366
-8mux2.sv
-Fmux2.sv
-!i122 12
-L0 5 31
+Z3 d//wsl.localhost/Ubuntu/home/zohar/sm1/Simulator1
+w1709153255
+8fas.sv
+Ffas.sv
+!i122 23
+Z4 L0 2 49
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1709132561.000000
-Z7 !s107 libcells/NAND2.sv|libcells/OR2.sv|mux2.sv|mux4.sv|
-Z8 !s90 -reportprogress|300|mux4.sv|
+!s108 1709153257.000000
+!s107 fas.sv|
+!s90 -reportprogress|300|fas.sv|
 !i113 1
-Z9 tCvgOpt 0
+Z6 tCvgOpt 0
+vfas_test
+R0
+!s110 1709156432
+!i10b 1
+!s100 <zKKZ<`Hc:8D:1o`UimLe0
+R1
+IPJ9fG859`DWXGIl^VQkZR1
+R2
+S1
+R3
+w1709153982
+8fas_test.sv
+Ffas_test.sv
+!i122 27
+L0 2 50
+R5
+r1
+!s85 0
+31
+!s108 1709156432.000000
+!s107 fas_test.sv|
+!s90 -reportprogress|300|fas_test.sv|
+!i113 1
+R6
+vmux2
+R0
+!s110 1709149778
+!i10b 1
+!s100 TRCez:RF7ER<F9Nz=6UNL1
+R1
+IhEzBiU@`1c^TY57C=9Q5L0
+R2
+S1
+R3
+w1709148747
+8mux2.sv
+Fmux2.sv
+!i122 17
+L0 1 46
+R5
+r1
+!s85 0
+31
+!s108 1709149778.000000
+!s107 mux2.sv|
+!s90 -reportprogress|300|mux2.sv|
+!i113 1
+R6
 vmux4
 R0
-R1
+!s110 1709149782
 !i10b 1
-!s100 HA1mF87SQFO6mUPFK=K_S3
+!s100 1o3InlNmZh_7YoIIH6>UL0
+R1
+I5RAF3]c1lM;NDaQnc<`]H3
 R2
-IO4=eSA=00eD>^BPSTCD0k2
-R3
 S1
-R4
-w1709132320
+R3
+w1709148724
 8mux4.sv
 Fmux4.sv
-!i122 12
-L0 3 36
+!i122 18
+L0 2 21
 R5
 r1
 !s85 0
 31
-R6
-R7
-R8
+!s108 1709149782.000000
+!s107 mux4.sv|
+!s90 -reportprogress|300|mux4.sv|
 !i113 1
-R9
+R6
 vmux4_test
 R0
-!s110 1709132571
+!s110 1709150698
 !i10b 1
-!s100 kzg3FgeGnF]=24nlRYKP<1
+!s100 zjkdJ11<XSH0?>R?RgEW82
+R1
+I:<_0VcDKW45cNdnO8h[m=2
 R2
-I958IKMJzR4Ei>1dJ<dm0i1
-R3
 S1
-R4
-w1655131822
+R3
+w1709150654
 8mux4_test.sv
 Fmux4_test.sv
-!i122 13
-L0 2 9
+!i122 22
+R4
 R5
 r1
 !s85 0
 31
-!s108 1709132571.000000
+!s108 1709150698.000000
 !s107 mux4_test.sv|
 !s90 -reportprogress|300|mux4_test.sv|
 !i113 1
-R9
+R6
 vNAND2
 R0
-R1
+!s110 1709149757
 !i10b 1
 !s100 nV_[P_8gj[]?i<@HDENLl2
-R2
+R1
 IlXO459gEcm;]5]K[b9[821
-R3
+R2
 S1
-R4
+R3
 w1564820692
 8libcells/NAND2.sv
 Flibcells/NAND2.sv
-!i122 12
-Z10 L0 1 12
+!i122 14
+Z7 L0 1 12
 R5
 r1
 !s85 0
 31
-R6
-R7
-R8
+!s108 1709149757.000000
+!s107 libcells/NAND2.sv|
+!s90 -reportprogress|300|libcells/NAND2.sv|
 !i113 1
-R9
+R6
 n@n@a@n@d2
 vOR2
 R0
-R1
+!s110 1709149771
 !i10b 1
 !s100 TKP6Xe513KabBIJNZ^OmL2
-R2
+R1
 I0iI5_iXMT4Q7i?KEf[N]O0
-R3
+R2
 S1
-R4
+R3
 w1564820704
 8libcells/OR2.sv
 Flibcells/OR2.sv
-!i122 12
-R10
+!i122 16
+R7
 R5
 r1
 !s85 0
 31
-R6
-R7
-R8
+!s108 1709149771.000000
+!s107 libcells/OR2.sv|
+!s90 -reportprogress|300|libcells/OR2.sv|
 !i113 1
-R9
+R6
 n@o@r2
 vXNOR2
 R0
-!s110 1709132541
+!s110 1709149766
 !i10b 1
 !s100 gL:>B`z7><3OLI<>>SCg93
-R2
+R1
 IhoPC_jLXLRUdRzB6hF8L70
-R3
+R2
 S1
-R4
+R3
 w1564820714
 8libcells/XNOR2.sv
 Flibcells/XNOR2.sv
-!i122 9
-R10
+!i122 15
+R7
 R5
 r1
 !s85 0
 31
-!s108 1709132541.000000
+!s108 1709149766.000000
 !s107 libcells/XNOR2.sv|
 !s90 -reportprogress|300|libcells/XNOR2.sv|
 !i113 1
-R9
+R6
 n@x@n@o@r2
