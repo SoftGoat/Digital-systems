@@ -1,0 +1,158 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1/ModelSimTutorial
+vmux2
+Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z1 !s110 1709132562
+!i10b 1
+!s100 :FSdDdXD[D[jgl2m6:DU>2
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IE=R`ognPi5o?6W8W>bhnQ3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+S1
+Z4 dC:/Users/IMOE001/Desktop/Simulator1
+w1709115366
+8mux2.sv
+Fmux2.sv
+!i122 12
+L0 5 31
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1709132561.000000
+Z7 !s107 libcells/NAND2.sv|libcells/OR2.sv|mux2.sv|mux4.sv|
+Z8 !s90 -reportprogress|300|mux4.sv|
+!i113 1
+Z9 tCvgOpt 0
+vmux4
+R0
+R1
+!i10b 1
+!s100 HA1mF87SQFO6mUPFK=K_S3
+R2
+IO4=eSA=00eD>^BPSTCD0k2
+R3
+S1
+R4
+w1709132320
+8mux4.sv
+Fmux4.sv
+!i122 12
+L0 3 36
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+vmux4_test
+R0
+!s110 1709132571
+!i10b 1
+!s100 kzg3FgeGnF]=24nlRYKP<1
+R2
+I958IKMJzR4Ei>1dJ<dm0i1
+R3
+S1
+R4
+w1655131822
+8mux4_test.sv
+Fmux4_test.sv
+!i122 13
+L0 2 9
+R5
+r1
+!s85 0
+31
+!s108 1709132571.000000
+!s107 mux4_test.sv|
+!s90 -reportprogress|300|mux4_test.sv|
+!i113 1
+R9
+vNAND2
+R0
+R1
+!i10b 1
+!s100 nV_[P_8gj[]?i<@HDENLl2
+R2
+IlXO459gEcm;]5]K[b9[821
+R3
+S1
+R4
+w1564820692
+8libcells/NAND2.sv
+Flibcells/NAND2.sv
+!i122 12
+Z10 L0 1 12
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@n@a@n@d2
+vOR2
+R0
+R1
+!i10b 1
+!s100 TKP6Xe513KabBIJNZ^OmL2
+R2
+I0iI5_iXMT4Q7i?KEf[N]O0
+R3
+S1
+R4
+w1564820704
+8libcells/OR2.sv
+Flibcells/OR2.sv
+!i122 12
+R10
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@o@r2
+vXNOR2
+R0
+!s110 1709132541
+!i10b 1
+!s100 gL:>B`z7><3OLI<>>SCg93
+R2
+IhoPC_jLXLRUdRzB6hF8L70
+R3
+S1
+R4
+w1564820714
+8libcells/XNOR2.sv
+Flibcells/XNOR2.sv
+!i122 9
+R10
+R5
+r1
+!s85 0
+31
+!s108 1709132541.000000
+!s107 libcells/XNOR2.sv|
+!s90 -reportprogress|300|libcells/XNOR2.sv|
+!i113 1
+R9
+n@x@n@o@r2

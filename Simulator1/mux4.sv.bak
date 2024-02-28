@@ -1,0 +1,40 @@
+`include "libcells/OR2.sv"
+`include "libcells/NAND2.sv"
+`include "libcells/XNOR2.sv"
+`include "mux2.sv"
+module mux4 (
+    input logic d0,          // Data input 0
+    input logic d1,          // Data input 1
+    input logic d2,          // Data input 2
+    input logic d3,          // Data input 3
+    input logic [1:0] sel,   // Select input
+    output logic z           // Output
+);
+ logic m1, m2, m3;
+
+    // Instantiate mux2 for the first two data inputs
+    mux2 mux2_inst1 (
+        .d0(d0),
+        .d1(d1),
+        .sel(sel[0]),
+        .z(m1)
+    );
+
+    // Instantiate mux2 for the last two data inputs
+    mux2 mux2_inst2 (
+        .d0(d2),
+        .d1(d3),
+        .sel(sel[0]),
+        .z(m2)
+    );
+
+    // Instantiate mux2 for the outputs of the first two mux2 instances
+    mux2 mux2_inst3 (
+        .d0(m1),
+        .d1(m2),
+        .sel(sel[1]),
+        .z(m3)
+    );
+    // Output of the last mux2 instance is the final output
+    assign z = m3;
+endmodule

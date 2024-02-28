@@ -1,0 +1,36 @@
+`include "libcells/OR2.sv"
+`include "libcells/NAND2.sv"
+
+// 2->1 multiplexer template
+module mux2 (
+    input logic d0,          // Data input 0
+    input logic d1,          // Data input 1
+    input logic sel,         // Select input
+    output logic z           // Output
+);
+
+    // Internal signals
+    logic g1, g2, g3, g4, g5;
+
+    // Instantiate OR2 gate for d0 input with delay parameters
+    OR2 #(.Tpdlh(4), .Tpdhl(4)) or2_g1 (.Z(g1), .A(d0), .B(sel));
+
+    // Instantiate NAND2 gate for select signal with delay parameters
+    NAND2 #(.Tpdlh(6), .Tpdhl(6)) nand2_g2 (.Z(g2), .A(sel), .B(sel));
+
+    // Instantiate OR2 gate for d1 input with delay parameters
+    OR2 #(.Tpdlh(4), .Tpdhl(4)) or2_g3(.Z(g3), .A(d1), .B(g2));
+
+
+    // Instantiate NAND2 gate for select signal with delay parameters
+    NAND2 #(.Tpdlh(6), .Tpdhl(6)) nand2_g4 (.Z(g4), .A(g3), .B(g1));
+
+    // Instantiate another NAND2 gate for generating the final output with delay parameters
+    NAND2 #(.Tpdlh(6), .Tpdhl(6)) nand2_g5 (.Z(g5), .A(g4), .B(g4));
+
+
+    // Assign final output to output port z
+    assign z = g5;
+
+endmodule
+

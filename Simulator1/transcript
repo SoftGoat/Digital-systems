@@ -1,0 +1,168 @@
+vlog muxw.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:08:30 on Feb 28,2024
+# vlog -reportprogress 300 muxw.sv 
+# ** Error: (vlog-7) Failed to open design unit file "muxw.sv" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 12:08:30 on Feb 28,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+vlog mux2.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:08:42 on Feb 28,2024
+# vlog -reportprogress 300 mux2.sv 
+# -- Compiling module OR2
+# -- Compiling module NAND2
+# -- Compiling module mux2
+# 
+# Top level modules:
+# 	mux2
+# End time: 12:08:42 on Feb 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog mux4.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:57:23 on Feb 28,2024
+# vlog -reportprogress 300 mux4.sv 
+# -- Compiling module OR2
+# -- Compiling module NAND2
+# -- Compiling module XNOR2
+# ** Warning: ** while parsing file included at mux4.sv(4)
+# ** while parsing file included at mux2.sv(1)
+# ** at libcells/OR2.sv(1): (vlog-2275) Existing module 'OR2' will be overwritten.
+# -- Compiling module OR2
+# ** Warning: ** while parsing file included at mux4.sv(4)
+# ** while parsing file included at mux2.sv(2)
+# ** at libcells/NAND2.sv(1): (vlog-2275) Existing module 'NAND2' will be overwritten.
+# -- Compiling module NAND2
+# -- Compiling module mux2
+# -- Compiling module mux4
+# 
+# Top level modules:
+# 	XNOR2
+# 	mux4
+# End time: 16:57:24 on Feb 28,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 2
+vlog mux4.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:58:33 on Feb 28,2024
+# vlog -reportprogress 300 mux4.sv 
+# -- Compiling module OR2
+# -- Compiling module NAND2
+# -- Compiling module XNOR2
+# ** Warning: ** while parsing file included at mux4.sv(4)
+# ** while parsing file included at mux2.sv(1)
+# ** at libcells/OR2.sv(1): (vlog-2275) Existing module 'OR2' will be overwritten.
+# -- Compiling module OR2
+# ** Warning: ** while parsing file included at mux4.sv(4)
+# ** while parsing file included at mux2.sv(2)
+# ** at libcells/NAND2.sv(1): (vlog-2275) Existing module 'NAND2' will be overwritten.
+# -- Compiling module NAND2
+# -- Compiling module mux2
+# -- Compiling module mux4
+# 
+# Top level modules:
+# 	XNOR2
+# 	mux4
+# End time: 16:58:33 on Feb 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vlog mux4.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:58:41 on Feb 28,2024
+# vlog -reportprogress 300 mux4.sv 
+# -- Compiling module OR2
+# -- Compiling module NAND2
+# -- Compiling module mux2
+# -- Compiling module mux4
+# 
+# Top level modules:
+# 	mux4
+# End time: 16:58:42 on Feb 28,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vlog mux4_test.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:59:37 on Feb 28,2024
+# vlog -reportprogress 300 mux4_test.sv 
+# -- Compiling module mux4_test
+# 
+# Top level modules:
+# 	mux4_test
+# End time: 16:59:37 on Feb 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim mux4_test.sv
+# OpenFile mux4_test.sv
+vlog libcells/NAND2.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:02:05 on Feb 28,2024
+# vlog -reportprogress 300 libcells/NAND2.sv 
+# -- Compiling module NAND2
+# 
+# Top level modules:
+# 	NAND2
+# End time: 17:02:05 on Feb 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog libcells/NXNOR2.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:02:14 on Feb 28,2024
+# vlog -reportprogress 300 libcells/NXNOR2.sv 
+# ** Error: (vlog-7) Failed to open design unit file "libcells/NXNOR2.sv" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 17:02:14 on Feb 28,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+vlog libcells/XNOR2.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:02:21 on Feb 28,2024
+# vlog -reportprogress 300 libcells/XNOR2.sv 
+# -- Compiling module XNOR2
+# 
+# Top level modules:
+# 	XNOR2
+# End time: 17:02:21 on Feb 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog libcells/OR2.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:02:27 on Feb 28,2024
+# vlog -reportprogress 300 libcells/OR2.sv 
+# -- Compiling module OR2
+# 
+# Top level modules:
+# 	OR2
+# End time: 17:02:28 on Feb 28,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vlog mux2.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:02:34 on Feb 28,2024
+# vlog -reportprogress 300 mux2.sv 
+# -- Compiling module OR2
+# -- Compiling module NAND2
+# -- Compiling module mux2
+# 
+# Top level modules:
+# 	mux2
+# End time: 17:02:34 on Feb 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog mux4.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:02:41 on Feb 28,2024
+# vlog -reportprogress 300 mux4.sv 
+# -- Compiling module OR2
+# -- Compiling module NAND2
+# -- Compiling module mux2
+# -- Compiling module mux4
+# 
+# Top level modules:
+# 	mux4
+# End time: 17:02:42 on Feb 28,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vlog mux4_test.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:02:51 on Feb 28,2024
+# vlog -reportprogress 300 mux4_test.sv 
+# -- Compiling module mux4_test
+# 
+# Top level modules:
+# 	mux4_test
+# End time: 17:02:51 on Feb 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim mux4.sv
+# OpenFile mux4.sv
