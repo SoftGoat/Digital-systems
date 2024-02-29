@@ -9,22 +9,94 @@ z2
 !i10f 100
 cModel Technology
 dC:/intelFPGA/20.1/ModelSimTutorial
-vfas
+valu1bit
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-!s110 1709191164
+!s110 1709194541
 !i10b 1
-!s100 bo4oUk]>C1S?@G]g7P]1o2
+!s100 Zz47_>_SX];;OLJH<e7]M0
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I7nNG7K;7AGO?AnDfD6_A22
+ICHfT_K]ISBd06`gMEK_Y[0
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 S1
 Z3 d//wsl.localhost/Ubuntu/home/zohar/sm1/Simulator1
+w1709193532
+8alu1bit.sv
+Falu1bit.sv
+!i122 38
+L0 2 56
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1709194540.000000
+!s107 alu1bit.sv|
+!s90 -reportprogress|300|alu1bit.sv|
+!i113 1
+Z5 tCvgOpt 0
+valu64bit
+R0
+!s110 1709194548
+!i10b 1
+!s100 _zEeV185d@RBDVUOzPCOA1
+R1
+I;9Xl1KTZc1OY[;K_OAULL3
+R2
+S1
+R3
+w1709194484
+8alu64bit.sv
+Falu64bit.sv
+!i122 39
+L0 1 45
+R4
+r1
+!s85 0
+31
+!s108 1709194548.000000
+!s107 alu64bit.sv|
+!s90 -reportprogress|300|alu64bit.sv|
+!i113 1
+R5
+valu64bit_test
+R0
+!s110 1709194553
+!i10b 1
+!s100 L1SWFAETiY<9;Y:Sg43Ok1
+R1
+Igh8;23F5DLSUNV1alnRRe3
+R2
+S1
+R3
+w1709194525
+8alu64bit_test.sv
+Falu64bit_test.sv
+!i122 40
+L0 1 43
+R4
+r1
+!s85 0
+31
+!s108 1709194552.000000
+!s107 alu64bit_test.sv|
+!s90 -reportprogress|300|alu64bit_test.sv|
+!i113 1
+R5
+vfas
+R0
+!s110 1709191164
+!i10b 1
+!s100 bo4oUk]>C1S?@G]g7P]1o2
+R1
+I7nNG7K;7AGO?AnDfD6_A22
+R2
+S1
+R3
 w1709190467
 8fas.sv
 Ffas.sv
 !i122 34
-Z4 L0 2 49
-Z5 OV;L;2020.1;71
+Z6 L0 2 49
+R4
 r1
 !s85 0
 31
@@ -32,7 +104,7 @@ r1
 !s107 fas.sv|
 !s90 -reportprogress|300|fas.sv|
 !i113 1
-Z6 tCvgOpt 0
+R5
 vfas_test
 R0
 !s110 1709191527
@@ -48,7 +120,7 @@ Z7 8fas_test.sv
 Z8 Ffas_test.sv
 !i122 36
 Z9 L0 2 51
-R5
+R4
 r1
 !s85 0
 31
@@ -56,7 +128,7 @@ r1
 Z10 !s107 fas_test.sv|
 Z11 !s90 -reportprogress|300|fas_test.sv|
 !i113 1
-R6
+R5
 vfas_testbench
 R0
 !s110 1709191170
@@ -72,7 +144,7 @@ R7
 R8
 !i122 35
 R9
-R5
+R4
 r1
 !s85 0
 31
@@ -80,7 +152,7 @@ r1
 R10
 R11
 !i113 1
-R6
+R5
 vmux2
 R0
 !s110 1709149778
@@ -96,7 +168,7 @@ w1709148747
 Fmux2.sv
 !i122 17
 L0 1 46
-R5
+R4
 r1
 !s85 0
 31
@@ -104,7 +176,7 @@ r1
 !s107 mux2.sv|
 !s90 -reportprogress|300|mux2.sv|
 !i113 1
-R6
+R5
 vmux4
 R0
 !s110 1709149782
@@ -120,7 +192,7 @@ w1709148724
 Fmux4.sv
 !i122 18
 L0 2 21
-R5
+R4
 r1
 !s85 0
 31
@@ -128,7 +200,7 @@ r1
 !s107 mux4.sv|
 !s90 -reportprogress|300|mux4.sv|
 !i113 1
-R6
+R5
 vmux4_test
 R0
 !s110 1709150698
@@ -143,8 +215,8 @@ w1709150654
 8mux4_test.sv
 Fmux4_test.sv
 !i122 22
+R6
 R4
-R5
 r1
 !s85 0
 31
@@ -152,7 +224,7 @@ r1
 !s107 mux4_test.sv|
 !s90 -reportprogress|300|mux4_test.sv|
 !i113 1
-R6
+R5
 vNAND2
 R0
 !s110 1709149757
@@ -168,7 +240,7 @@ w1564820692
 Flibcells/NAND2.sv
 !i122 14
 Z12 L0 1 12
-R5
+R4
 r1
 !s85 0
 31
@@ -176,7 +248,7 @@ r1
 !s107 libcells/NAND2.sv|
 !s90 -reportprogress|300|libcells/NAND2.sv|
 !i113 1
-R6
+R5
 n@n@a@n@d2
 vOR2
 R0
@@ -193,7 +265,7 @@ w1564820704
 Flibcells/OR2.sv
 !i122 16
 R12
-R5
+R4
 r1
 !s85 0
 31
@@ -201,7 +273,7 @@ r1
 !s107 libcells/OR2.sv|
 !s90 -reportprogress|300|libcells/OR2.sv|
 !i113 1
-R6
+R5
 n@o@r2
 vXNOR2
 R0
@@ -218,7 +290,7 @@ w1564820714
 Flibcells/XNOR2.sv
 !i122 15
 R12
-R5
+R4
 r1
 !s85 0
 31
@@ -226,5 +298,5 @@ r1
 !s107 libcells/XNOR2.sv|
 !s90 -reportprogress|300|libcells/XNOR2.sv|
 !i113 1
-R6
+R5
 n@x@n@o@r2
