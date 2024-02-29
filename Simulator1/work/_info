@@ -11,7 +11,7 @@ cModel Technology
 dC:/intelFPGA/20.1/ModelSimTutorial
 vfas
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-!s110 1709153257
+!s110 1709191164
 !i10b 1
 !s100 bo4oUk]>C1S?@G]g7P]1o2
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -19,42 +19,66 @@ I7nNG7K;7AGO?AnDfD6_A22
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 S1
 Z3 d//wsl.localhost/Ubuntu/home/zohar/sm1/Simulator1
-w1709153255
+w1709190467
 8fas.sv
 Ffas.sv
-!i122 23
+!i122 34
 Z4 L0 2 49
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1709153257.000000
+!s108 1709191163.000000
 !s107 fas.sv|
 !s90 -reportprogress|300|fas.sv|
 !i113 1
 Z6 tCvgOpt 0
 vfas_test
 R0
-!s110 1709156432
+!s110 1709191527
 !i10b 1
-!s100 <zKKZ<`Hc:8D:1o`UimLe0
+!s100 RL[Gn[;`c=Q=zUH]7l3d92
 R1
-IPJ9fG859`DWXGIl^VQkZR1
+I@LYYfZBP8fYFg[7NPLnCc3
 R2
 S1
 R3
-w1709153982
-8fas_test.sv
-Ffas_test.sv
-!i122 27
-L0 2 50
+w1709191493
+Z7 8fas_test.sv
+Z8 Ffas_test.sv
+!i122 36
+Z9 L0 2 51
 R5
 r1
 !s85 0
 31
-!s108 1709156432.000000
-!s107 fas_test.sv|
-!s90 -reportprogress|300|fas_test.sv|
+!s108 1709191527.000000
+Z10 !s107 fas_test.sv|
+Z11 !s90 -reportprogress|300|fas_test.sv|
+!i113 1
+R6
+vfas_testbench
+R0
+!s110 1709191170
+!i10b 1
+!s100 WKh[mUe8REb]D2?RLICiM2
+R1
+INLiE]66C]3MQdVoL2RQF=1
+R2
+S1
+R3
+w1709191002
+R7
+R8
+!i122 35
+R9
+R5
+r1
+!s85 0
+31
+!s108 1709191170.000000
+R10
+R11
 !i113 1
 R6
 vmux2
@@ -143,7 +167,7 @@ w1564820692
 8libcells/NAND2.sv
 Flibcells/NAND2.sv
 !i122 14
-Z7 L0 1 12
+Z12 L0 1 12
 R5
 r1
 !s85 0
@@ -168,7 +192,7 @@ w1564820704
 8libcells/OR2.sv
 Flibcells/OR2.sv
 !i122 16
-R7
+R12
 R5
 r1
 !s85 0
@@ -193,7 +217,7 @@ w1564820714
 8libcells/XNOR2.sv
 Flibcells/XNOR2.sv
 !i122 15
-R7
+R12
 R5
 r1
 !s85 0

@@ -1,41 +1,50 @@
-// Full Adder/Subtractor test bench template
-module fas_test;
+// Full Adder/Subtractor template
+module fas (
+    input logic a,           // Input bit a
+    input logic b,           // Input bit b
+    input logic cin,         // Carry in
+    input logic a_ns,        // A_nS (add/not subtract) control
+    output logic s,          // Output S
+    output logic cout        // Carry out
+);
 
-    // Signal declarations
-    logic a;           // Input bit a
-    logic b;           // Input bit b
-    logic cin;         // Carry in
-    logic a_ns;        // A_nS (add/not subtract) control
-    logic s;           // Output S
-    logic cout;        // Carry out
+	logic  wire1, wire2, wire3, wire4, wire5;
 
-    // Instance of the unit under test (fas)
-    fas uut(
-        .a(a),
-        .b(b),
-        .cin(cin),
-        .a_ns(a_ns),
-        .s(s),
-        .cout(cout)
-    );
+	OR2#(
+		.Tpdlh(4), 
+		.Tpdhl(4)
+	) g1(.A(a), .B(b), .Z(wire1));
 
-    // Stimulus generation
-    initial begin
-        // Test case 1: Addition without carry-in
-        a = 1'b0;
-        b = 1'b0;
-        cin = 1'b0;
-        a_ns = 1'b0;  // Add
-        #19;  // Delay to observe output
+    NAND2#(
+		.Tpdlh(6), 
+		.Tpdhl(6)
+	) g2(.A(cin), .B(b), .Z(wire2));
+	
+    OR2#(
+		.Tpdlh(4), 
+		.Tpdhl(4)
+	) g3(.A(cin), .B(b), .Z(wire3));
+	
+    XNOR2#(
+		.Tpdlh(7), 
+		.Tpdhl(7)
+	) g4(.A(a), .B(a_ns), .Z(wire4));
+	
+    XNOR2#(
+		.Tpdlh(7), 
+		.Tpdhl(7)
+	) g5(.A(wire1), .B(cin), .Z(s));
 
-        // Test case 2: Subtraction without carry-in
-        a = 1'b0;
-        b = 1'b0;
-        cin = 1'b0;
-        a_ns = 1'b1;  // Subtract
-        #19;  // Delay to observe output
+    NAND2#(
+		.Tpdlh(6), 
+		.Tpdhl(6)
+	) g6(.A(wire3), .B(wire4), .Z(wire5));
+	
+    NAND2#(
+		.Tpdlh(6), 
+		.Tpdhl(6)
+	) g7(.A(wire2), .B(wire5), .Z(cout));
+	
 
-        // Additional test cases as needed
-    end
 
 endmodule

@@ -1,51 +1,52 @@
-// Full Adder/Subtractor test bench template
+// Full Adder/Subtractor test bench
 module fas_test;
 
+    // Parameters
+    parameter SIM_TIME = 100; // Simulation time
 
-// Signal declarations
-logic d0;          // Data input 0
-logic d1;          // Data input 1
-logic d2;          // Data input 2
-logic d3;          // Data input 3
-logic [1:0] sel;   // Select input
-logic z;           // Output
+    // Signals
+    logic a, b, cin, a_ns; // Inputs
+    logic s, cout;          // Outputs
 
-// Instance of the unit under test (mux4)
-mux4 uut(
-    .d0(d0),
-    .d1(d1),
-    .d2(d2),
-    .d3(d3),
-    .sel(sel),
-    .z(z)
-);
+    // Instantiate the fas module
+    fas uut (
+        .a(a),
+        .b(b),
+        .cin(cin),
+        .a_ns(a_ns),
+        .s(s),
+        .cout(cout)
+    );
 
-// Stimulus generation
-initial begin
-    // Initialize inputs
-    d0 = 1'b0;
-    d1 = 1'b0;
-    d2 = 1'b1;
-    d3 = 1'b1;
-    sel = 2'b00;
+    // Test case generator
+    initial begin
+        // Test case 1: Addition with carry-in
+        a = 1'b1;
+        b = 1'b1;
+        cin = 1'b1;
+        a_ns = 1'b0;  // Add
+        #19;  // Delay to observe output
 
-    // Apply inputs for 32 time units
-    #32;
+        // Test case 2: Subtraction without carry-in
+        a = 1'b0;
+        b = 1'b1;
+        cin = 1'b0;
+        a_ns = 1'b1;  // Subtract
+        #19;  // Delay to observe output
 
-    // Change select input and maintain inputs
-    sel = 2'b10;
+        // Test case 3: Addition without carry-in
+        a = 1'b1;
+        b = 1'b0;
+        cin = 1'b0;
+        a_ns = 1'b0;  // Add
+        #19;  // Delay to observe output
 
-    // Apply inputs for 16 time units
-    #16;
-
-    // Change select input back to 00 and maintain inputs
-    sel = 2'b00;
-
-    // Apply inputs for additional simulation time if needed
-    // #additional_time;
+        // Additional test cases can be added here
+    end
 
     // End simulation
-    $finish;
-end
+    initial
+        #SIM_TIME $finish;
+    
 
 endmodule
