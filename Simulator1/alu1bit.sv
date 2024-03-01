@@ -7,51 +7,51 @@ module alu1bit (
     output logic s,          // Output S
     output logic cout        // Carry out
 );
-logic  wire1, wire2, wire3, wire4, wire6;
 
-    OR2#(
+// Put your code here
+// ------------------
+	logic wire1, wire2, wire3, wire4, wire5, sum2;
+	
+	NAND2#(
+		.Tpdlh(6), 
+		.Tpdhl(6)
+	) g1(.A(op[0]), .B(op[0]), .Z(wire1));
+	
+	OR2#(
 		.Tpdlh(4), 
 		.Tpdhl(4)
-	) g1(.A(a), .B(b), .Z(wire1));
+	) g2(.A(a), .B(b), .Z(wire2));
 	
-
-    XNOR2#(
+	NAND2#(
+		.Tpdlh(6), 
+		.Tpdhl(6)
+	) g3(.A(wire2), .B(wire2), .Z(wire3));
+	
+	
+	XNOR2#(
 		.Tpdlh(7), 
 		.Tpdhl(7)
-	) g2(.A(b), .B(a), .Z(wire2));
+	) g4(.A(a), .B(cin), .Z(wire4));
 	
-    NAND2#(
+	NAND2#(
 		.Tpdlh(6), 
 		.Tpdhl(6)
-	) g3(.A(op[0]), .B(op[0]), .Z(wire3));
-
-    NAND2#(
-		.Tpdlh(6), 
-		.Tpdhl(6)
-	) g4(.A(wire1), .B(wire1), .Z(wire4));
-
-    NAND2#(
-		.Tpdlh(6), 
-		.Tpdhl(6)
-	) g5(.A(wire2), .B(wire2), .Z(wire5));
-
-
-    fas uut (
-        .a(a),
-        .b(b),
-        .cin(cin),
-        .a_ns(wire3),
-        .s(wire6),
-        .cout(cout)
-    );
-
-    mux4 uut1 (
-        .d0(wire4),
+	) g5(.A(wire4), .B(wire4), .Z(wire5));
+	
+	
+	fas FAS(.a(a), .b(b), .cin(cin), .a_ns(wire1), .s(sum2), .cout(cout));
+	
+	
+	mux4 uut(
+        .d0(wire3),
         .d1(wire5),
-        .d2(wire6),
-        .d3(wire6),
-        .sel(op),
-        .s(s)
+        .d2(sum2),
+        .d3(sum2),
+		.sel(op),
+		.z(s)
     );
+	
+
+// End of your code
 
 endmodule
