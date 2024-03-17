@@ -16,7 +16,7 @@ module mult32x32_arith (
 
 logic [7:0] selected_a_byte;
 logic [15:0] selected_b_word;
-logic [15:0] multiplier_output;
+logic [24:0] multiplier_output;
 logic [63:0] shifted_output;
 logic [63:0] new_product;
 
@@ -28,18 +28,11 @@ always_comb begin
         2'b10: selected_a_byte = a[23:16];
         2'b11: selected_a_byte = a[31:24];
     endcase
-end
-
-always_comb begin
     if (!b_sel) begin
         selected_b_word = b[15:0];
     end else begin
         selected_b_word = b[31:16];
-    end
-end
-
-                          
-always_comb begin
+    end                 
     multiplier_output = selected_a_byte * selected_b_word;
     case(shift_sel)
         3'b000: shifted_output  = multiplier_output;
@@ -56,12 +49,11 @@ end
 always_ff @(posedge clk or posedge reset) begin
     if (reset) begin
         product <= 64'b0;
+    end else if (clr_prod) begin
+        product <= 64'b0;
     end else if (upd_prod) begin
-        if (clr_prod) begin
-            product <= 64'b0;
-        end else begin
-            product <= product + shifted_output;
-        end
+        new_product = product + shifted_output;
+        product <= new_product;
     end
 end 
 

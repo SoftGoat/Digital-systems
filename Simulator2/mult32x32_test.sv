@@ -1,16 +1,17 @@
-// 32X32 Multiplier test template
 `include "mult32x32.sv"
+
 module mult32x32_test;
 
+    // Testbench signals
     logic clk;            // Clock
     logic reset;          // Reset
     logic start;          // Start signal
     logic [31:0] a;       // Input a
     logic [31:0] b;       // Input b
     logic busy;           // Multiplier busy indication
-    logic [63:0] product; // Miltiplication product
+    logic [63:0] product; // Multiplication product
 
-// Instantiate the unit under test (UUT)
+    // Instantiate the multiplier unit
     mult32x32 uut (
         .clk(clk),
         .reset(reset),
@@ -21,7 +22,13 @@ module mult32x32_test;
         .product(product)
     );
 
-    // Test sequence
+    // Clock generation
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk; // Generate a clock with 10ns period (100MHz)
+    end
+
+    // Test procedure
     initial begin
         // Initialize inputs
         reset = 1;
@@ -29,32 +36,36 @@ module mult32x32_test;
         a = 0;
         b = 0;
 
-        // Assert reset for 4 clock cycles
-        #40; 
+        // Reset the multiplier
+        #10;
         reset = 0;
-        @(negedge clk);
+        
+        // Wait for the multiplier to be ready
+        wait(!busy)
+        $display("Multiplier ready");
+        // Test vector 1
+        a = 32'h17; // First input value
+        b = 32'h2D; // Second input value
+        start = 1;
+        #10; // Apply start for one clock cycle
+        start = 0;
+        
+        // Wait for the multiplication to finish
+        wait(!busy)
+        $display("Multiplication finished");
+        $display("Current simulation time: %0t", $time);
 
-        // Test case 1: Simple multiplication
-        a = 32'b10111; // 23 in binary
-        b = 32'b101101; // 45 in binary
-        #10; // Wait for a one clock cycle before starting the multiplication
-        start = 1'b1;
-        @(posedge clk);
-         start <= 1'b0;  // Non-blocking assignment ensures 'start' goes low after 1 cycle
-        // Wait for multiplication to finish
-        wait (!busy); // wait for busy to go low
-        @(posedge clk); // wait one more clock cycle after busy is deasserted
-
-        // Check result of multiplication
-        if (product !== 64'b10000001011) begin
-            $display("Test case 1 failed: product = %b", product);
+        // Check result
+        if (product !== 64'h40b) begin
+            $display("Test vector 1 failed: expected 64'h40B, got %h", product);
         end else begin
-            $display("Test case 1 passed.");
+            $display("Test vector 1 passed: got %h", product);
         end
 
-        // Add additional test cases dere with different values of a and b
+        // Insert additional test vectors here
 
-    
+        // Finish simulation
+        #100; 
     end
 
 endmodule

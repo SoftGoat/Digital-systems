@@ -1,3 +1,4 @@
+`include "mult32x32_arith.sv"
 module mult32x32_arith_test;
 
     // Testbench signals
@@ -50,6 +51,7 @@ module mult32x32_arith_test;
         #40;
         reset = 1'b0;
         clr_prod = 1'b0;
+        #100
         // First test vector
         a = 32'h000000FF; // 255 in the lowest byte
         b = 32'hFFFF0000; // 65535 in the upper word
