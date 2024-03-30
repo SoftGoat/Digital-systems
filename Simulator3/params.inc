@@ -8,7 +8,8 @@
     ALU     = 10'b0110011_xxx,
     BEQ     = 10'b1100011_000,
     JAL     = 10'b1101111_xxx;
-
+    I       = 10'b0010011_000;
+ 
  // PC selector
  localparam
     PC_ALU = 1'b1,
@@ -16,20 +17,28 @@
 
  // Immediate selector
  localparam
-    IMM_B   = 2'b00,
-    IMM_J   = 2'b01,
-    IMM_S   = 2'b10,
-    IMM_L   = 2'b11;
+    IMM_B   = 3'b000,
+    IMM_J   = 3'b001,
+    IMM_S   = 3'b010,
+    IMM_L   = 3'b011,
+    IMM_I   = 3'b100;
 
  // ALU_A
  localparam
-    ALUA_PCC = 1'b0,
-    ALUA_REG = 1'b1;
+    ALUA_PCC = 2'b00,
+    ALUA_REG = 2'b01;
+    X_REG    = 2'b10
 
  // ALU_B
  localparam
-    ALUB_IMM = 1'b0,
-    ALUB_REG = 1'b1;
+    ALUB_IMM = 2'b00,
+    ALUB_REG = 2'b01;
+    Const_IMM = 2'b10;
+
+// Control signals
+localparam
+    X_WRITE_ENABLE  = 1'b1,  // Enable writing to register
+    X_WRITE_DISABLE = 1'b0;  // Disable writing to register
 
  // ALU operations
  localparam

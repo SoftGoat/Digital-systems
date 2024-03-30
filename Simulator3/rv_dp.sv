@@ -42,7 +42,7 @@
  `include "params.inc"
 
  // Stage registers
- logic [DPWIDTH-1:0] pc, pcc, ir, a, b, aluout, mdr;
+ logic [DPWIDTH-1:0] pc, pcc, ir, a, b, aluout, mdr, x;
 
  // Fetch
  assign imem_addr = pc;
@@ -71,6 +71,16 @@
      else if (irwrite)
          ir     <= imem_datain;
  assign instr = ir;
+
+
+  // IR
+ // ==
+ always_ff @(posedge clk or posedge rst)
+     if (rst)
+         x     <= 0;
+     else if (x_write)
+         x     <= aluout;
+
  
  // Register file inputs
  // ====================
@@ -80,6 +90,7 @@
         WB_MDR:     datad = mdr;
         WB_ALUOUT:  datad = aluout;
         WB_PC:      datad = pc;
+        X
         default:    datad = pc;
     endcase
  logic [4:0] addra, addrb, addrd;
@@ -120,6 +131,7 @@
          IMM_B: imm = {{20{ir[31]}},ir[7],ir[30:25],ir[11:8],1'b0};
          IMM_S: imm = {{21{ir[31]}},ir[30:25],ir[11:7]};
          IMM_L: imm = {{21{ir[31]}},ir[30:20]};
+         IMM_I: imm = {{21{ir[31]}},ir[30:20]};
      endcase
  end
 
