@@ -25,6 +25,7 @@
      input logic pcwrite,
      input logic pccen,
      input logic irwrite,
+     input logic x_write,
      input logic [1:0] wbsel,
      input logic regwen,
      input logic [1:0] immsel,
@@ -73,7 +74,7 @@
  assign instr = ir;
 
 
-  // IR
+  // X_REG
  // ==
  always_ff @(posedge clk or posedge rst)
      if (rst)
@@ -90,7 +91,7 @@
         WB_MDR:     datad = mdr;
         WB_ALUOUT:  datad = aluout;
         WB_PC:      datad = pc;
-        X
+        X_REG:      datad = x;
         default:    datad = pc;
     endcase
  logic [4:0] addra, addrb, addrd;
@@ -137,7 +138,7 @@
 
  // ALU input A
  logic [DPWIDTH-1:0] alu_a;
- assign alu_a = (asel == ALUA_REG) ? a : pcc;
+ assign alu_a = (asel == ALUA_REG) ? a : (asel == X_REG) ? x : pcc;
 
  // ALU input A
  logic [DPWIDTH-1:0] alu_b;
