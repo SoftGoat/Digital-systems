@@ -78,15 +78,16 @@ sm_type current,next;
                 ALU:    next = RTYPE_ALU;
                 BEQ:    next = BEQ_EXEC;
                 JAL:    next = JAL_EXEC;
+                ADDI:   next = LSW_XOR;
                 // For unimplemented instructions do nothing
                 default:next = FETCH; 
             endcase
         end
         LSW_ADDR: begin
             casex (opcode_funct3)
-                LW:     next = LW_MEM;
+                LW:     next = LW_MEM;  
                 SW:     next = SW_MEM;
-                I:      next = LSW_XOR;
+                ADDI:      next = LSW_XOR;
                 // This is never reached
                 default:next = SW_MEM;
             endcase
@@ -106,7 +107,7 @@ sm_type current,next;
         JAL_EXEC:
             next = FETCH;
         LSW_XOR:
-            next = FETCH;
+            next = RTYPE_WB;
         default: // Should never reach this
             next = FETCH;
     endcase
@@ -145,15 +146,14 @@ sm_type current,next;
             alusel      = ALU_ADD;
         end
         LSW_ADDR: begin
-            immsel      = (opcode_funct3 == LW) ? IMM_L : ((opcode_funct3 == I) ? IMM_I : IMM_S);
+            immsel      = (opcode_funct3 == LW) ? IMM_L : ((opcode_funct3 == ADDI) ? IMM_I : IMM_S);
             asel        = ALUA_REG;
             bsel        = ALUB_IMM;
             alusel      = ALU_ADD;
         end
         LSW_XOR: begin
-            immsel      = IMM_XOR;
-            asel        = X_REG;
-            bsel        = Const_IMM;
+            asel        = ALUA_OUT;
+            bsel        = ALUB_C;
             alusel      = ALU_XOR;
         end
         LW_MEM:

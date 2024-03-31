@@ -1,5 +1,10 @@
 .text
-main:   # Put your code here
+main:  
+        lw t2, 8(x0)
+        addi t3, t2, 12
+        sw t3, 16(x0)
+
+
         add		t6, x0, x0
         beq		t6, x0, finish
 

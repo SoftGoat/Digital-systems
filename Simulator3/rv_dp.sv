@@ -83,7 +83,6 @@
         WB_MDR:     datad = mdr;
         WB_ALUOUT:  datad = aluout;
         WB_PC:      datad = pc;
-        X_REG:      datad = x;
         default:    datad = pc;
     endcase
  logic [4:0] addra, addrb, addrd;
@@ -130,11 +129,11 @@
 
  // ALU input A
  logic [DPWIDTH-1:0] alu_a;
- assign alu_a = (asel == ALUA_REG) ? a : (asel == X_REG) ? x : pcc;
+ assign alu_a = (asel == ALUA_REG) ? a : (asel == ALUA_OUT) ? aluout : pcc;
 
- // ALU input A
+ // ALU input B
  logic [DPWIDTH-1:0] alu_b;
- assign alu_b = (bsel == ALUB_REG) ? b : imm;
+ assign alu_b = (bsel == ALUB_REG) ? b : (bsel == ALUB_C) ?  32'hffffffff : imm;
 
  // For signed comparison, cast to integer. logic is by default unsigned
  integer alu_as;
