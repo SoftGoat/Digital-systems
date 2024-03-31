@@ -25,7 +25,6 @@
      input logic pcwrite,
      input logic pccen,
      input logic irwrite,
-     input logic x_write,
      input logic [1:0] wbsel,
      input logic regwen,
      input logic [1:0] immsel,
@@ -74,13 +73,6 @@
  assign instr = ir;
 
 
-  // X_REG
- // ==
- always_ff @(posedge clk or posedge rst)
-     if (rst)
-         x     <= 0;
-     else if (x_write)
-         x     <= aluout;
 
  
  // Register file inputs

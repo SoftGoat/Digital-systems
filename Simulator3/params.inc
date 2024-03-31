@@ -25,9 +25,8 @@
 
  // ALU_A
  localparam
-    ALUA_PCC = 2'b00,
-    ALUA_REG = 2'b01;
-    X_REG    = 2'b10
+    ALUA_PCC = 1'b0,
+    ALUA_REG = 1'b1;
 
  // ALU_B
  localparam
@@ -35,10 +34,7 @@
     ALUB_REG = 2'b01;
     Const_IMM = 2'b10;
 
-// Control signals
-localparam
-    X_WRITE_ENABLE  = 1'b1,  // Enable writing to register
-    X_WRITE_DISABLE = 1'b0;  // Disable writing to register
+
 
  // ALU operations
  localparam

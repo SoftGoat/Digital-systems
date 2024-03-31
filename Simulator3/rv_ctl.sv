@@ -130,7 +130,6 @@ sm_type current,next;
     alusel = ALU_ADD;
     mdrwrite = 1'b0;
     memrw = 1'b0;
-    x_write = X_WRITE_DISABLE;
     case (current)
         FETCH:
         begin
@@ -156,7 +155,6 @@ sm_type current,next;
             asel        = X_REG;
             bsel        = Const_IMM;
             alusel      = ALU_XOR;
-            x_write     = X_WRITE_ENABLE;
         end
         LW_MEM:
             mdrwrite    = 1'b1;
