@@ -27,9 +27,9 @@
      input logic irwrite,
      input logic [1:0] wbsel,
      input logic regwen,
-     input logic [1:0] immsel,
-     input logic asel,
-     input logic bsel,
+     input logic [2:0] immsel,
+     input logic [1:0] asel,
+     input logic [1:0] bsel,
      input logic [3:0] alusel,
      input logic mdrwrite,
      
@@ -42,7 +42,7 @@
  `include "params.inc"
 
  // Stage registers
- logic [DPWIDTH-1:0] pc, pcc, ir, a, b, aluout, mdr, x;
+ logic [DPWIDTH-1:0] pc, pcc, ir, a, b, aluout, mdr;
 
  // Fetch
  assign imem_addr = pc;
@@ -115,7 +115,7 @@
  // ===
  
  // Immediate selector
- logic [DPWIDTH-1:0] imm;
+ logic [DPWIDTH-2:0] imm;
  always_comb
  begin
      case(immsel)

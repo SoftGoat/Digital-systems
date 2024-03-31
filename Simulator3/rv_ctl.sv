@@ -19,9 +19,9 @@
      output logic irwrite,
      output logic [1:0] wbsel,
      output logic regwen,
-     output logic [1:0] immsel,
-     output logic asel,
-     output logic bsel,
+     output logic [2:0] immsel,
+     output logic [1:0] asel,
+     output logic [1:0] bsel,
      output logic [3:0] alusel,
      output logic mdrwrite,
      
@@ -78,7 +78,7 @@ sm_type current,next;
                 ALU:    next = RTYPE_ALU;
                 BEQ:    next = BEQ_EXEC;
                 JAL:    next = JAL_EXEC;
-                ADDI:   next = LSW_XOR;
+                ADDI:   next = LSW_ADDR;
                 // For unimplemented instructions do nothing
                 default:next = FETCH; 
             endcase
@@ -87,7 +87,7 @@ sm_type current,next;
             casex (opcode_funct3)
                 LW:     next = LW_MEM;  
                 SW:     next = SW_MEM;
-                ADDI:      next = LSW_XOR;
+                ADDI:   next = LSW_XOR;
                 // This is never reached
                 default:next = SW_MEM;
             endcase
